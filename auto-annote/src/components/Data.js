@@ -64,7 +64,8 @@ function Data() {
             <TrainData>
             <span>Upload Train Data</span>
 
-                <form action='' onClick={() => document.querySelector(".field").click()}>
+            <Files>
+            <form action='' onClick={() => document.querySelector(".field").click()}>
                     <input type = "fie" accept='image/*' className='field' hidden 
                     
                     onChange={({target:{files}} )  => {
@@ -77,21 +78,29 @@ function Data() {
                     {
                         image ? <img src={image} width={60} height={60} alt={fileName} />
                         : 
-                        <>
-                        <MdCloudUpload color='#1475cf' size={60} />
-                        <p>Browse Files</p>
-                        </>
+                        <main>
+                            <MdCloudUpload color='#1475cf' size={60} />
+                            <p>Browse Files</p>
+                        </main>
                     }
 
                     
                 </form>
 
-                <AiFillFileImage color='#1475cf'/>
-                <span>
-                    {fileName}
-                    <MdDelete onClick= {()=>{setFileName("No File Selected") 
-                                            setImage(null)}} color='#1475cf' size={20} />
-                </span>
+                <section>
+                    {/* <AiFillFileImage color='#1475cf'/> */}
+                    <span>
+                        {fileName}
+                        <MdDelete onClick= {()=>{setFileName("No File Selected") 
+                                                setImage(null)}} color='#1475cf' size={20} />
+                    </span>
+                </section>
+
+                
+
+            </Files>
+
+                
                 
                 
 
@@ -161,6 +170,7 @@ const TrainData = styled.div`
 
 animation: ${floatingAnimation} 3s ease-in-out infinite;
 
+
 width:400px;
 height:500px;
 background:blue;
@@ -217,4 +227,33 @@ const Model = styled(TrainData)`
 
 
 
+`
+
+const Files = styled.div`
+
+background:black;
+display:flex;
+flex-direction:column;
+
+display:flex;
+justify-content: center;
+align-items: center;
+img{
+    width:200px;
+
+}
+cursor:pointer;
+width:400px;
+height:500px;
+border:2px dashed #1475cf;
+border-radius:10px;
+
+section{
+
+    display:flex;
+    flex-direction:column;
+    width:70px;
+
+    
+}
 `
