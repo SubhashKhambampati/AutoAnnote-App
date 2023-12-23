@@ -1,27 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
-import LeftNavbar from './LeftNavbar'
-import Data from './Data'
+import LeftNavbar from './LeftNavbar.js'
+
+
 
 function Projects() {
+
   return (
     <Container>
 
+
         <LeftNavbar />
-        <Data />
+
+        
+
+         
+        
+        
 
       
     </Container>
   )
 }
 
-export default Projects
+export default Projects;
 
 const Container = styled.div`
 
 
-margin-top:10px;
-align-items:center;
+
+display:flex;
+flex-direction:row;
+overflow-y:hidden;
 
 
 

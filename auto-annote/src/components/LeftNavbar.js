@@ -1,8 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
-import Data from './Data'
+import Data from './Data.js'
+import  { useState } from "react";
+
+ 
 
 function LeftNavbar() {
+        const [currentStateSlide1, setCurrentSlide1] = useState(false);
+    // const [currentStateSlide2, setCurrentSlide2] = useState(false);
+    // const [currentStateSlide3, setCurrentSlide3] = useState(false);
+    // const [currentStateSlide4, setCurrentSlide4] = useState(false);
+
+    
+    
+    
+
+    const handleClick1 = () => {
+        setCurrentSlide1(true);
+    };
+    // const handleClick2 = (slideIndex) => {
+    //     setCurrentSlide2(slideIndex);
+    // };
+    // const handleClick3 = (slideIndex) => {
+    //     setCurrentSlide3(slideIndex);
+    // };
+    // const handleClick4 = (slideIndex) => {
+    //     setCurrentSlide4(slideIndex);
+    // };
+    
+   
   return (
     <Nav>
 
@@ -12,31 +38,40 @@ function LeftNavbar() {
 
 
             <Image>
-                <img src= "images/big-data.png"/>
+                
+                {/* <button onClick={handleClick1(true)}><img src= "images/big-data.png" alt="" /></button>
+                <button onClick={handleClick2(true)} ><img src= "images/algorithm.png" alt=""/></button>
+                <button onClick={handleClick3(true)}><img src= "images/scatter-plot.png" alt=""/></button>
+                <button onClick={handleClick4(true)}><img src= "images/heatmap.png" alt=""/></button> */}
+
+
+                {/* <button ><img src= "images/big-data.png" alt="" /></button> */}
+
+                <button onClick={handleClick1}><img src= "images/big-data.png" alt="" /></button>
+
+                <button onClick={handleClick1} ><img src= "images/algorithm.png" alt=""/></button>
+                <button ><img src= "images/scatter-plot.png" alt=""/></button>
+                <button><img src= "images/heatmap.png" alt=""/></button>
 
             </Image>
-            <Image>
-                <img src= "images/algorithm.png"/>
-            </Image>
-            <Image>
-                <img src= "images/scatter-plot.png"/>
-            </Image>
-            <Image>
-                <img src= "images/heatmap.png"/>
-            </Image>
-            
-
-            {/* <span>Data</span>
-            <span>Model</span>
-            <span>Plots</span>
-            <span>HeatMaps</span>
-            <span>BoundingBox</span> */}
+           
             
 
 
 
         </NavMenu>
-        <Data />
+
+        <DataGrid>
+            {currentStateSlide1 && <Data />}
+
+        </DataGrid>
+
+        
+
+
+        
+        
+       
       
     </Nav>
   )
@@ -45,11 +80,18 @@ function LeftNavbar() {
 export default LeftNavbar
 
 
+
+
 const Nav = styled.div`
-margin-top:0px;
+
+display :flex;
+flex-direction :row;
+// margin-top:60px;
+// overflow-y: hidden;
+position:relative;
 
 width:100px;
-// height:700px;
+height:100%;
 box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 
 // background-color:#212121;
@@ -57,50 +99,76 @@ border-radius:10px;
 border:1px solid transparent;
 color:black;
 opacity:1;
-display:grid;
-grid-template-column:repeat(2,minmax(0,1fr));
+
 
 `
 
 const NavMenu = styled.div`
 
-display:flex;
-flex-direction:column;
+
 align-items:center;
 justify-content:center;
 text-align:center;
-margin-top:20px;
+margin-top:0px;
 text-decoration:none;
 text-transform:uppercase;
 
-font-size:20px;
+
 color:black;
 opacity:1;
 
 
-img{
-    opacity:1;
 
-    
-    width:80%;
-    height:30%;
-    // font-size:15px;
-    cursor:pointer;
-    border:1px solid transparent;
-    border-radius:10px;
-    border-sizing:border-box;
-    color:black;
-
-   
-    
-
-}
 
 
 
 `
 const Image = styled.div`
+display:flex;
+flex-direction:column;
+margin-left:10px;
+padding:0px;
+margin:0px;
+button{
+
+    background:transparent;
+    border:1px solid transparent;
+    padding:0px;
+    margin:0px;
+    margin-left:10px;
+
+    img{
+        opacity:1;
+        margin-left:0px;
+        margin-bottom:0px;
+    
+        
+        
+        width:70px;
+        height:80px;
+        cursor:pointer;
+        border:1px solid transparent;
+        border-radius:10px;
+        border-sizing:border-box;
+        color:black;
+    
+       
+        
+    
+    }
+
+}
+
+
 
 
 `
 
+
+
+const DataGrid = styled.div`
+
+
+
+
+`

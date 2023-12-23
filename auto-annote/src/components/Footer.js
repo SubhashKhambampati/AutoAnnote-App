@@ -1,45 +1,81 @@
-import React from 'react';
+import React from 'react'
+import {MdCloudUpload , MdDelete} from 'react-icons/md';
+import {AiFillFileImage} from 'react-icons/ai';
+import { useState } from 'react';
+import styled from 'styled-components'
 
-const Footer = () => {
-  const leftColumnStyle = {
-    float: 'left',
-    width: '30%',
-    padding: '20px',
-    boxSizing: 'border-box',
-  };
+function Footer() {
 
-  const rightColumnStyle = {
-    float: 'left',
-    width: '30%',
-    padding: '20px',
-    boxSizing: 'border-box',
-  };
-
-  const imageStyle = {
-    width: '100%',
-    height: 'auto',
-    marginBottom: '10px',
-  };
-
+    const [image , setImage] = useState(null);
+    const [fileName , setFileName] = useState("No File Selected");
   return (
-    <div>
-      <div style={leftColumnStyle}>
-        {/* Images in the left column */}
-        <img src="images/big-data.png" alt="Image 1"  />
-        <img src="images/big-data.png" alt="Image 2"  />
-        {/* Add more images as needed */}
-      </div>
+            <Container>
 
-      <div style={rightColumnStyle}>
-        {/* Text and images in the right column */}
-        <h2>Right Column Title</h2>
-        <p>Some text here...</p>
-        <img src="images/big-data.png" alt="Image 3"  />
-        <img src="images/big-data.png" alt="Image 4"  />
-        {/* Add more text and images as needed */}
-      </div>
-    </div>
-  );
-};
 
-export default Footer;
+                <form action="" onClick={() => document.querySelector(".field").click()}>
+                    <input type = "file" accept='image/*' className='field' hidden 
+                    
+                    onChange={({target:{files}} )  => {
+                        files[0] && setFileName(files[0].name)
+                        if (files){
+                            setImage(URL.createObjectURL(files[0]))
+                        }
+                    }}
+                    />
+                    
+                    {
+                        image ? <img src={image} width={60} height={60} alt={fileName} />
+                        : 
+                        <>
+                        <MdCloudUpload color='#1475cf' size={60} />
+                        <p>Browse Files to Upload</p>
+                        </>
+                    }
+
+                    
+                </form>
+
+                <section>
+
+                
+                <span>
+                    {fileName}
+                    <MdDelete onClick= {()=>{setFileName("No File Selected") 
+                                            setImage(null)}} color='#1475cf' size={20} />
+                </span>
+                </section>
+
+      
+            </Container>
+  )
+}
+
+export default Footer
+
+const Container = styled.div`
+background:black;
+
+width:100vw;
+height:100vh;
+display:flex;
+justify-content: center;
+align-items: center;
+
+cursor:pointer;
+width:500px;
+height:300px;
+border:2px dashed #1475cf;
+border-radius:10px;
+
+section{
+
+    display:flex;
+    flex-direction:column;
+    width:70px;
+    
+}
+
+`
+
+
+
