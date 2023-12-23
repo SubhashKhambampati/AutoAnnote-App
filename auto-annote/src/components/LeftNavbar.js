@@ -2,12 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Data from './Data.js'
 import  { useState } from "react";
+import Plots from './Plots';
 
  
 
 function LeftNavbar() {
         const [currentStateSlide1, setCurrentSlide1] = useState(false);
-    // const [currentStateSlide2, setCurrentSlide2] = useState(false);
+    const [currentStateSlide2, setCurrentSlide2] = useState(false);
     // const [currentStateSlide3, setCurrentSlide3] = useState(false);
     // const [currentStateSlide4, setCurrentSlide4] = useState(false);
 
@@ -17,10 +18,12 @@ function LeftNavbar() {
 
     const handleClick1 = () => {
         setCurrentSlide1(true);
+        setCurrentSlide2(false);
     };
-    // const handleClick2 = (slideIndex) => {
-    //     setCurrentSlide2(slideIndex);
-    // };
+    const handleClick2 = () => {
+        setCurrentSlide1(false);
+        setCurrentSlide2(true);
+    };
     // const handleClick3 = (slideIndex) => {
     //     setCurrentSlide3(slideIndex);
     // };
@@ -49,7 +52,7 @@ function LeftNavbar() {
 
                 <button onClick={handleClick1}><img src= "images/big-data.png" alt="" /></button>
 
-                <button onClick={handleClick1} ><img src= "images/algorithm.png" alt=""/></button>
+                <button onClick={handleClick2} ><img src= "images/algorithm.png" alt=""/></button>
                 <button ><img src= "images/scatter-plot.png" alt=""/></button>
                 <button><img src= "images/heatmap.png" alt=""/></button>
 

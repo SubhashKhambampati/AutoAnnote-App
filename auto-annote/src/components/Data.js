@@ -4,6 +4,8 @@ import { useState } from 'react';
 import  { keyframes } from 'styled-components';
 import {MdCloudUpload , MdDelete} from 'react-icons/md';
 import {AiFillFileImage} from 'react-icons/ai';
+import { Checkmark } from 'react-checkmark'
+
 
 const slideInFromTop = keyframes`
 from {
@@ -66,7 +68,7 @@ function Data() {
 
             <Files>
             <form action='' onClick={() => document.querySelector(".field").click()}>
-                    <input type = "fie" accept='image/*' className='field' hidden 
+                    <input type = "file" accept='image/*' className='field' hidden 
                     
                     onChange={({target:{files}} )  => {
                         files[0] && setFileName(files[0].name)
@@ -76,10 +78,10 @@ function Data() {
                     }}
                     />
                     {
-                        image ? <img src={image} width={60} height={60} alt={fileName} />
+                        image ? <CheckMark><Checkmark size='100px' color='green' /></CheckMark>
                         : 
                         <main>
-                            <MdCloudUpload color='#1475cf' size={60} />
+                            <MdCloudUpload color='#1475cf' size={30} />
                             <p>Browse Files</p>
                         </main>
                     }
@@ -231,29 +233,70 @@ const Model = styled(TrainData)`
 
 const Files = styled.div`
 
-background:black;
-display:flex;
-flex-direction:column;
+margin-top:50px;
+
+position:relative;
+
+width:300px;
+height:300px;
+margin-left:100px;
 
 display:flex;
 justify-content: center;
 align-items: center;
-img{
-    width:200px;
 
-}
 cursor:pointer;
-width:400px;
-height:500px;
-border:2px dashed #1475cf;
-border-radius:10px;
 
-section{
+flex-direction:column;
 
+// border:2px dashed #1475cf;
+// border-radius:10px;
+
+main{
     display:flex;
     flex-direction:column;
-    width:70px;
+    width:200px;
+    height:200px;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    position:relative;
+    margin-left:-110px;
+
+
+    span{
+        margin-top:0px;
+        justify-content: center;
+    align-items: center;
+    text-align:center;
+    font-size:10px;
+    width:100px;
+    
+
+    }
+
+    display:flex;
+
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    
+    width:60px;
 
     
 }
+
+
+`
+
+const CheckMark = styled.div`
+
+margin-left:-50px;
+
+
+
+
 `
