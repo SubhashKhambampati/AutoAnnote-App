@@ -38,6 +38,7 @@ function Header() {
 export default Header;
 
 const Container = styled.div`
+
   border: 1px solid #fff;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   color: black;
