@@ -173,6 +173,7 @@ button{
     flex-gap:0px;
     
     margin-bottom:50px;
+    transition:color 0.3s ease-in-out;
     
 
     
@@ -211,12 +212,7 @@ button{
     
     }
 
-    &:hover{
-        background:#579BB1;
-        border:1px solid transparent;
-        border-radius:10px;
-        line-height:0px;
-    }
+    
 
     &:focus{
 
@@ -224,6 +220,26 @@ button{
         border:1px solid transparent;
         border-radius:10px;
         line-height:0px;
+    }
+
+    &:hover{
+        background:#ECE8DD;
+       
+        
+        border:1px solid transparent;
+        border-radius:10px;
+        line-height:0px;
+        color:red;
+
+        h3:after{
+            color:red;
+
+        }
+        img:hover{
+
+            color:blue;
+
+        }
     }
 
 }

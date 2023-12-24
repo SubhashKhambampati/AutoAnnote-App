@@ -53,6 +53,8 @@ function Footer() {
 export default Footer
 
 const Container = styled.div`
+
+
 background:black;
 
 width:100vw;

@@ -7,6 +7,7 @@ import Header from './components/Header.js';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Projects from './components/Projects.js'
 import Footer from './components/Footer.js';
+import FileUpload from './features/FileUpload.js';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         </Routes>
       </Router>
      
+
+     <FileUpload />
       
 
       

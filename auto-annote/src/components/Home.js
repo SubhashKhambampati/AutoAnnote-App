@@ -4,6 +4,12 @@ import styled from 'styled-components'
 function Home() {
   return (
     <Container>
+
+      Upload file
+      <FileUpload files={files} setFiles={setFiles}
+        removeFile={removeFile} />
+      <FileList files={files} removeFile={removeFile} />
+   
         
 
         
