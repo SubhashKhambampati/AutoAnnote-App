@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
-import FileItem from './../FileItem/FileItem'
+import FileItem from '/home/AIapp/Documents/AutoAnnote-App/auto-annote/src/features/FileItem/FileItem.js'
+import styled from 'styled-components'
 
 const FileList = ({ files, removeFile }) => {
     const deleteFileHandler = (_name) => {
@@ -9,7 +10,7 @@ const FileList = ({ files, removeFile }) => {
             .catch((err) => console.error(err));
     }
     return (
-        <ul className="file-list">
+        <Content className="file-list">
             {
                 files &&
                 files.map(f => (<FileItem
@@ -17,8 +18,23 @@ const FileList = ({ files, removeFile }) => {
                     file={f}
                     deleteFile={deleteFileHandler} />))
             }
-        </ul>
+        </Content>
     )
 }
 
 export default FileList
+
+
+
+const Content = styled.div`
+
+color:black;
+width:400px;
+height:50px;
+
+
+align-items:center;
+justify-content:center;
+
+
+`

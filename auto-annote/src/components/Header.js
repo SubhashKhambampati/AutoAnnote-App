@@ -95,27 +95,36 @@ const NavLink = styled(Link)`
     align-items: center;
     justify-content: center;
     padding: 0px 20px;
+    transition: color 0.5s ease-in-out;
 
-    &:after {
-      content: "";
-      height: 2px;
-      position: absolute;
-      left: 0;
-      background: black;
-      right: 0;
-      bottom: 0px;
-      opacity: 0;
-      transform-origin: left center;
-      transform: scaleX(0);
-      transition: transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s,
-        opacity 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    }
+    // &:after {
+    //   content: "";
+    //   height: 2px;
+    //   position: absolute;
+    //   left: 0;
+    //   background: black;
+    //   right: 0;
+    //   bottom: 0px;
+    //   opacity: 0;
+    //   transform-origin: left center;
+    //   transform: scaleX(0);
+    //   transition: transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s,
+    //     opacity 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    // }
   }
 
   &:hover {
-    span:after {
+    span {
       transform: scaleX(1);
+      color:blue;
       opacity: 1;
     }
+  }
+  &:focus{
+    span{
+      color:blue;
+    }
+    
+
   }
 `;
