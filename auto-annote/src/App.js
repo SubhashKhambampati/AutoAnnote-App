@@ -5,6 +5,7 @@ import './App.css';
 import Home from './components1/Home.js';
 // import Header from './components/Header.js';
 import Header from './components1/Header.js';
+import Section from './components1/Section.js';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Projects from './components/Projects.js'
@@ -24,13 +25,15 @@ function App() {
 
           <Route path="/" element={<Home />} />
           
-          <Route path="/projects" element={<Projects />} />
+          {/* <Route path="/projects" element={<Projects />} /> */}
           
-        </Routes>
-      </Router> */}
+        {/* </Routes>
+      </Router> */} */}
 
       <Header />
       <Home />
+      <Section />
+
      
 
      

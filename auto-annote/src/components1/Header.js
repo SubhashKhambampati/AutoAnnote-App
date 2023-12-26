@@ -83,6 +83,7 @@ const Logo = styled.div`
     text-transform:uppercase;
     margin-top:35px;
     color:black;
+    cursor:pointer;
     span{
         color:black;
     }
