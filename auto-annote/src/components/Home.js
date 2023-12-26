@@ -15,17 +15,23 @@ function Home() {
   return (
     <Container>
 
-      <Section1>
+      <Section2>
+        <Section1>
 
-        <h1>Welcome to our App</h1>
-        <h4>Revolutionize your data analysis</h4>
-        <button type='toggle'>Get Started</button>
-        <img src = "https://teleporthq.io/Home/Vectors/vector.svg" alt = "" />
-
-
+            <h1>Welcome to our App</h1>
+            <h4>Revolutionize your data analysis</h4>
+            <button type='toggle'>Get Started</button>
 
 
-      </Section1>
+
+
+
+        </Section1>
+        <Grid src = "https://teleporthq.io/Home/Vectors/vector.svg" alt = "" />
+
+      </Section2>
+
+      
 
       <Content>
 
@@ -83,8 +89,12 @@ flex-direction:column;
 
 color:black;
 background:blue;
-margin-left:650px;
-margin-top:50px;
+// margin-left:650px;
+// margin-top:50px;
+
+align-items:center;
+justify-content:center;
+
 
 
 
@@ -93,11 +103,17 @@ margin-top:50px;
 
 
 `
+const Section2 = styled.div`
 
+display:flex;
+flex-direction:row;
+
+`
 const Section1 = styled.div`
 
 border:1px solid transparent;
 border-radius:30px;
+
 
 h1{
   color:black;
@@ -114,6 +130,14 @@ h4{
   white-space: nowrap;
 
 }
+
+
+`
+const Grid = styled.img`
+
+width:600px;
+height:600px;
+float:right;
 
 
 `
