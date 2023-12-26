@@ -19,7 +19,8 @@ function Home() {
 
         <h1>Welcome to our App</h1>
         <h4>Revolutionize your data analysis</h4>
-        <button>Get Started</button>
+        <button type='toggle'>Get Started</button>
+        <img src = "https://teleporthq.io/Home/Vectors/vector.svg" alt = "" />
 
 
 
@@ -71,6 +72,8 @@ width:200px;
 height:100%;
 
 
+
+
 align-items:center;
 justify-content:center;
 
@@ -78,6 +81,8 @@ display:flex;
 flex-direction:column;
 
 
+color:black;
+background:blue;
 margin-left:650px;
 margin-top:50px;
 
@@ -93,6 +98,22 @@ const Section1 = styled.div`
 
 border:1px solid transparent;
 border-radius:30px;
+
+h1{
+  color:black;
+  font-weight:900;
+  font-size:30px;
+  white-space: nowrap;
+        
+}
+h4{
+
+  color:black;
+  font-weight:700;
+  font-size:20px;
+  white-space: nowrap;
+
+}
 
 
 `
