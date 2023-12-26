@@ -1,8 +1,10 @@
 
 import './App.css';
 
-import Home from './components/Home.js';
-import Header from './components/Header.js';
+// import Home from './components/Home.js';
+import Home from './components1/Home.js';
+// import Header from './components/Header.js';
+import Header from './components1/Header.js';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Projects from './components/Projects.js'
@@ -13,16 +15,22 @@ function App() {
   return (
     <div className="App">
 
-      <Router>
+      {/* <Router>
 
       <Header />
+
+      
         <Routes>
+
           <Route path="/" element={<Home />} />
           
           <Route path="/projects" element={<Projects />} />
           
         </Routes>
-      </Router>
+      </Router> */}
+
+      <Header />
+      <Home />
      
 
      
