@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
 
 function Home() {
   return (
@@ -11,13 +11,18 @@ function Home() {
 
             <span>Welcome To Our Page</span>
             <span>Revolutionize Your Data Analysis</span>
-            <Button variant="outline-dark">Getting Started</Button>
+            <button><span>Getting Started</span></button>
+         
+            
+            
+         
+            
                 
-            {/* </Button>
-            <button><span>Getting Started</span></button> */}
+           
             
 
         </Section>
+      
       
     </Container>
   )
@@ -68,20 +73,31 @@ span{
 }
 
 button{
-    width:200px;
+    width:150px;
     height:50px;
     background:transparent;
-    border:1px solid white;
+    border:1px solid transparent;
     margin-top:20px;
     cursor:pointer;
+    background:black;
+    border-radius:10px;
+    padding:5px 0;
+    box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);
+
     span{
         color:white;
         font-size:15px;
         letter-spacing:1.5px;
         text-align:center;
+        line-height:0px;
+        
+        
     }
 }
 
 
 
 `
+
+
+
