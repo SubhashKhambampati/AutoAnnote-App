@@ -18,9 +18,10 @@ function Home() {
       <Section2>
         <Section1>
 
+
             <h1>Welcome to our App</h1>
-            <h4>Revolutionize your data analysis</h4>
-            <button type='toggle'>Get Started</button>
+            <h1>Revolutionize your data analysis</h1>
+            <button type='submit'>Get Started</button>
 
 
 
@@ -31,29 +32,34 @@ function Home() {
 
       </Section2>
 
+      <Section3>
+            <Content>
+
+                  Upload File
+
+
+
+
+            </Content>
+
+            <Files>
+
+                <FileUpload files={files} setFiles={setFiles}
+                  removeFile={removeFile} />
+
+            </Files>
+
+            <FileListBox>
+
+                  <FileList files={files} removeFile={removeFile} />
+
+            </FileListBox>
+
+      </Section3>
+
       
 
-      <Content>
-
-        Upload File
-
-
-        
-
-      </Content>
-
-      <Files>
-
-        <FileUpload files={files} setFiles={setFiles}
-          removeFile={removeFile} />
-
-      </Files>
-
-      <FileListBox>
-
-      <FileList files={files} removeFile={removeFile} />
-
-      </FileListBox>
+      
 
       
    
@@ -74,7 +80,7 @@ const Container = styled.div`
 
 color:black;
 
-width:200px;
+width:100%;
 height:100%;
 
 
@@ -104,6 +110,9 @@ justify-content:center;
 
 `
 const Section2 = styled.div`
+
+width:100%;
+
 
 display:flex;
 flex-direction:row;
@@ -138,10 +147,19 @@ const Grid = styled.img`
 width:600px;
 height:600px;
 float:right;
+justify-content:space-between;
+align-items:center;
+position:relative;
 
 
 `
 
+const Section3 = styled.div`
+
+display;flex;
+flex-direction:column;
+
+`
 const Content = styled.div`
 
 color:black;
@@ -152,7 +170,7 @@ font-size:25px;
 `
 
 const Files= styled.div`
-transform:translateY(-280px);
+// transform:translateY(-280px);
 align-items:center;
 justify-content:center;
 position:relative;
@@ -163,7 +181,7 @@ position:relative;
 `
 
 const FileListBox = styled.div`
-transform:translateY(-230px);
+// transform:translateY(-230px);
 
 `
 
