@@ -9,7 +9,7 @@ import Section from './components1/Section.js';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Projects from './components/Projects.js'
-import Footer from './components/Footer.js';
+import Footer from './components1/Footer.js';
 
 
 function App() {
@@ -28,11 +28,12 @@ function App() {
           {/* <Route path="/projects" element={<Projects />} /> */}
           
         {/* </Routes>
-      </Router> */} */}
+      </Router> */} */
 
       <Header />
       <Home />
       <Section />
+      <Footer />
 
      
 
