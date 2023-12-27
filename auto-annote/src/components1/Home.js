@@ -2,8 +2,30 @@ import React, { useRef } from 'react';
 import styled from 'styled-components'
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import  { keyframes } from 'styled-components';
 
 
+
+
+const floatingAnimation = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
+const rotateAnimation = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  `
 function Home() {
 
     const scrollToSection = () => {
@@ -14,26 +36,33 @@ function Home() {
   return (
     <Container>
 
-
+        <Total>
+        <Label></Label>
         <Section>
 
+           
             <h1><span>Welcome To Our Page</span></h1>
             <p><span>Revolutionize Your Data Analysis</span></p>
             <button onClick={scrollToSection}><span>Get Started</span></button>
-         
-            
-            
-         
-            
+
+
+
+
+
                 
-           
-            
 
-        </Section>
 
-        <Image>
+
+            </Section>
+
+            <Image>
             <img src = "https://teleporthq.io/Home/Vectors/vector.svg" alt = "" />
-        </Image>
+            </Image>
+        </Total>
+        <Label1></Label1>
+
+
+
       
       
     </Container>
@@ -45,16 +74,67 @@ export default Home
 const Container = styled.div`
 
 width:100%;
-margin-top:70px;
-display:flex;
-height:500px;
+
+
+
 position:relative;
 // background:blue;
+display:flex;
+flex-direction:column;
+
+
+
+
+
+
+
+`
+const Total = styled.div`
+
+display:flex;
+position:relative;
+
+
+
+// background:red;
+flex-direction:row;
 justify-content:center;
 align-items:center;
-flex-direction:row;
 
 
+`
+
+
+const Label = styled.div`
+
+width:500px;
+height:200px;
+border:1px solid transparent;
+border-radius:50%;
+
+background:linear-gradient(45deg , #d2001a , #7462ff , #f48e21 , #23d5ab);
+background-size: 300% 300%;
+
+animation:${floatingAnimation} 12s ease-in-out infinite;
+transform:translateX(-120px);
+position:relative;
+
+
+`
+
+const Label1 = styled.div`
+width:100px;
+height:200px;
+border:1px solid transparent;
+border-radius:50%;
+
+background:linear-gradient(45deg , #d2001a , #7462ff , #f48e21 , #23d5ab);
+background-size: 300% 300%;
+
+animation:${floatingAnimation} 12s ease-in-out infinite;
+animation:${rotateAnimation} 12s ease-in-out infinite;
+
+position:relative;
 
 
 `
@@ -68,9 +148,9 @@ flex-direction:column;
 
 position:relative;
 width:100%;
-height:100px;
-margin-left:200px;
-margin-top:50px;
+height:150px;
+
+
 
 
 h1{
@@ -135,15 +215,17 @@ position:relative;
 width:100%;
 height:100%;
 margin-right:0;
+margin-top:0;
+margin-left:100px;
+margin-bottom:270px;
 
-margin-left:370px;
 
 
 img{
 
 
     border:1px solid transparent;
-    border-bottom-left-radius:400px;
+    border-bottom-left-radius:700px;
 
 
 }
